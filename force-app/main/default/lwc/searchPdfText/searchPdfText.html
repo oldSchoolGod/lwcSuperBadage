@@ -1,0 +1,9 @@
+<template>
+    <lightning-input type="text" label="Search Text" value={searchText} onchange={handleChange}></lightning-input>
+    <lightning-button label="Search" onclick={searchPdf}></lightning-button>
+    <template if:true={pdfFiles.data}>
+        <template for:each={pdfFiles.data} for:item="pdf">
+            <p key={pdf.Id}>{pdf.Title}</p>
+        </template>
+    </template>
+</template>
